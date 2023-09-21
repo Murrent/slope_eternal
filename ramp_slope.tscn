@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7tmp7e15gviu"]
+
+[ext_resource type="PackedScene" uid="uid://c6b2qwd627a3e" path="res://default_slope.tscn" id="1_gne70"]
+
+[node name="Ramp_Slope" instance=ExtResource("1_gne70")]
+
+[node name="Polygon2D" parent="." index="0"]
+polygon = PackedVector2Array(0, 0, 529, 354, 596, 371, 660, 360, 709, 324, 738, 387, 1000, 500, 1000, 2000, -1000, 2000, -1000, 0)
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(0, 0, 529, 354, 596, 371, 660, 360, 709, 324, 738, 387, 1000, 500, 1000, 2000, -1000, 2000, -1000, 0)

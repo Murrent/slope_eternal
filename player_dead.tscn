@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://c71vtmgehnl4t"]
+
+[ext_resource type="Texture2D" uid="uid://dlg7tyr7c4vye" path="res://character.png" id="1_81jrt"]
+[ext_resource type="Script" path="res://Restart.gd" id="2_5vwfn"]
+[ext_resource type="Script" path="res://MainMenu.gd" id="3_vnt85"]
+
+[node name="player_dead" type="Node2D"]
+
+[node name="Character" type="Sprite2D" parent="."]
+position = Vector2(0, -26)
+scale = Vector2(4, 4)
+texture = ExtResource("1_81jrt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -20)
+scale = Vector2(4, 4)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_5vwfn")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 50.0
+offset_right = 50.0
+offset_bottom = 85.0
+text = "Restart"
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 93.815
+offset_right = 50.0
+offset_bottom = 128.815
+text = "Main Menu"
+script = ExtResource("3_vnt85")
+
+[node name="Score" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -92.0
+offset_right = 170.0
+offset_bottom = -52.0
+text = "Score: 0"
+
+[connection signal="button_up" from="Control/Button" to="Control" method="_on_button_button_up"]
+[connection signal="button_up" from="Control/Button2" to="Control/Button2" method="_on_button_up"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd5h0jfc56bi6"]
+
+[ext_resource type="PackedScene" uid="uid://c6b2qwd627a3e" path="res://default_slope.tscn" id="1_ko1b2"]
+
+[node name="Steeper_Slope" instance=ExtResource("1_ko1b2")]
+
+[node name="Polygon2D" parent="." index="0"]
+polygon = PackedVector2Array(0, 0, 500, 500, 500, 2000, -1000, 2000, -1000, 0)
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(0, 0, 500, 500, 500, 2000, -1000, 2000, -1000, 0)
+
+[node name="Connector" parent="." index="2"]
+position = Vector2(500, 500)

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv5qbpfl3ej6n"]
+
+[ext_resource type="Script" path="res://StartButton.gd" id="1_t7oaq"]
+[ext_resource type="PackedScene" uid="uid://c7tmp7e15gviu" path="res://ramp_slope.tscn" id="2_6gxkm"]
+[ext_resource type="PackedScene" uid="uid://c6b2qwd627a3e" path="res://default_slope.tscn" id="3_epx03"]
+[ext_resource type="Texture2D" uid="uid://dlg7tyr7c4vye" path="res://character.png" id="4_m5tpm"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -100.0
+offset_top = -45.0
+offset_right = 100.0
+offset_bottom = -10.0
+text = "Play game"
+script = ExtResource("1_t7oaq")
+
+[node name="Ramp_Slope" parent="." instance=ExtResource("2_6gxkm")]
+position = Vector2(-853, -392)
+
+[node name="Default_Slope" parent="." instance=ExtResource("3_epx03")]
+position = Vector2(147, 108)
+
+[node name="Character" type="Sprite2D" parent="."]
+position = Vector2(8, -211)
+rotation = -2.99398
+scale = Vector2(4, 4)
+texture = ExtResource("4_m5tpm")
+
+[connection signal="button_up" from="Button" to="Button" method="_on_button_up"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvbg3q8fgmwmx"]
+
+[ext_resource type="PackedScene" uid="uid://xrn7tjtxriei" path="res://Player.tscn" id="2_rm628"]
+[ext_resource type="PackedScene" uid="uid://cloh47jy1dp5" path="res://snow.tscn" id="3_8pt74"]
+[ext_resource type="Script" path="res://level_builder.gd" id="3_jpmga"]
+[ext_resource type="Script" path="res://snow.gd" id="4_tr3nj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_rm628")]
+position = Vector2(11, -30)
+
+[node name="Level_Builder" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("3_jpmga")
+player = NodePath("../Player")
+
+[node name="GPUParticles2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_8pt74")]
+position = Vector2(10, 6)
+script = ExtResource("4_tr3nj")
+target = NodePath("../Player")
