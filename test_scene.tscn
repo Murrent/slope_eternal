@@ -9,6 +9,7 @@
 
 [node name="Player" parent="." instance=ExtResource("2_rm628")]
 position = Vector2(11, -30)
+jump_force = 50000.0
 
 [node name="Level_Builder" type="Node2D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("3_jpmga")
